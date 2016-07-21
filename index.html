@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <script type="text/javascript">
+            function write(content) {
+                window.document.documentElement.innerHTML += "<p>" + content + "</p>"
+            }
+
+            window.onkeydown = function(key) {
+                if (key.which === 80) {
+                    write("Name: " + window.interface.name);
+                    write("Age: " + window.interface.age);
+                } else if (key.which === 68) {
+                    window.interface.dialog("Well done!");
+                }
+            }
+
+            window.onload = function() {
+                write("Writing default name: " + window.interface.name);
+                write("Writing default age: " + window.interface.age);
+            };
+        </script>
+    </head>
+
+    <body>
+        <img src="title.png">
+        <p>Press <b>p</b> to print properties from the C++ object</p>
+        <p>Press <b>d</b> to open a dialog from QT</p>
+    </body>
+</html>
